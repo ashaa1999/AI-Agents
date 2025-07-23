@@ -1,0 +1,84 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "46be0f13-a4a7-4c13-81e5-3c6fd7f7ff5f",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "apptvgnXyoTeVcDeH",
+          "mode": "list",
+          "cachedResultName": "AirtableTest",
+          "cachedResultUrl": "https://airtable.com/apptvgnXyoTeVcDeH"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblAD5ULX0StXgo7c",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/apptvgnXyoTeVcDeH/tblAD5ULX0StXgo7c"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "74d95cf9-3b82-4999-b447-2f43d0e750e2",
+      "name": "Search records",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "swhDWJdovWs51ImM",
+          "name": "Airtable Personal Access Token account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Search records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cf1e3f97-fabb-4237-b487-d0e638e8c46a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bd6688269e3fecca7177532625e7aa40f84dd7405a4ea864c86754e49c14a50f"
+  },
+  "id": "rzTrOQN0ZcvhpNxA",
+  "tags": []
+}
